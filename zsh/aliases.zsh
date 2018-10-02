@@ -84,6 +84,7 @@ alias gci='git ci'
 alias gco='git co'
 alias gcp='git cp'
 alias ga='git add -A'
+alias gall='git add .'
 alias gap='git add -p'
 alias guns='git unstage'
 alias gunc='git uncommit'
@@ -210,4 +211,14 @@ alias dbmd='spring rake db:migrate:down'
 alias dbmu='spring rake db:migrate:up'
 
 # Homebrew
-alias brewu='brew update  && brew upgrade && brew cleanup && brew prune && brew doctor'
+alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
+
+# DrugDev specific apiases
+alias full-refresh='pushd ~/drugdev/setup && docker-compose -f docker-compose-full.yml down && docker_remove_images && docker-compose -f docker-compose-full.yml up --build && popd'
+alias dc='docker-compose -f docker-compose-full.yml'
+alias drmi='docker_remove_images'
+alias full-up='pushd ~/drugdev/setup && docker-compose -f docker-compose-full.yml start && popd'
+alias full-down='pushd ~/drugdev/setup && docker-compose -f docker-compose-full.yml stop && popd'
+alias docker-mysql-start='pushd ~/drugdev/setup && docker-compose -f docker-compose-full.yml start mysql && popd'
+alias docker-mysql-stop='pushd ~/drugdev/setup && docker-compose -f docker-compose-full.yml stop mysql && popd'
+alias dka='docker stop $(docker ps -aq)'
