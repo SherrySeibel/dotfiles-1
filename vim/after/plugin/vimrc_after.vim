@@ -17,6 +17,10 @@ set showmatch           " highlight matching [{()}]
 nnoremap j gj
 nnoremap k gk
 
+" Auto indent using `,i`
+vmap ,i gg=G
+nnoremap ,i gg=G
+
 set mouse=a            " Enable the mouse
 
 " From https://nvie.com/posts/how-i-boosted-my-vim/
