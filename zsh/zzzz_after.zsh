@@ -12,7 +12,6 @@ alias tat='tmux attach -t'
 alias tkall='tmux kill-server'
 
 # For copy/pasting across vim and tmux https://robots.thoughtbot.com/how-to-copy-and-paste-with-tmux-on-mac-os-x
-#!/bin/sh
 
 while true; do
   if test -n "`tmux showb 2> /dev/null`"; then
