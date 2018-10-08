@@ -5,6 +5,7 @@ if [ -d $HOME/.zsh.after/ ]; then
   fi
 fi
 
+# tmux aliases
 alias tns='tmux new -s'
 alias tks='tmux kill-session -t'
 alias tls='tmux ls'
@@ -19,3 +20,14 @@ while true; do
   fi
   sleep 0.5
 done
+
+# Additional git shortcuts
+alias gru='git remote update'
+alias gitl='git log -10'
+alias gl='git log -10'
+
+# Rails
+alias dbm='rake db:migrate'
+alias dbrb='rake db:rollback'
+alias dbd='rake db:drop'
+alias dbc='rake db:create'
