@@ -13,13 +13,14 @@ alias tat='tmux attach -t'
 alias tkall='tmux kill-server'
 
 # For copy/pasting across vim and tmux https://robots.thoughtbot.com/how-to-copy-and-paste-with-tmux-on-mac-os-x
+# The loop was commented out because it was always returning true
 
-while true; do
+# while true; do
   if test -n "`tmux showb 2> /dev/null`"; then
     tmux saveb -|pbcopy && tmux deleteb
   fi
   sleep 0.5
-done
+# done
 
 # Additional git shortcuts
 alias gru='git remote update'
