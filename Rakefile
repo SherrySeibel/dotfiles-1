@@ -209,7 +209,7 @@ def install_term_theme
   # If iTerm2 is not installed or has never run, we can't autoinstall the profile since the plist is not there
   if !File.exists?(File.join(ENV['HOME'], '/Library/Preferences/com.googlecode.iterm2.plist'))
     puts "======================================================"
-    puts "To make sure your profile is using the solarized theme"
+    puts "To make sure your profile is using your chosen theme"
     puts "Please check your settings under:"
     puts "Preferences> Profiles> [your profile]> Colors> Load Preset.."
     puts "======================================================"
