@@ -27,11 +27,11 @@ task :install => [:submodule_init, :submodules] do
 
   Rake::Task["install_prezto"].execute
 
+  Rake::Task["install_powerlevel10k"].execute
+
   install_fonts
 
   install_term_theme if RUBY_PLATFORM.downcase.include?("darwin")
-
-  install_powerlevel10k
 
   run_bundle_config
 
@@ -44,6 +44,13 @@ task :install_prezto do
     install_prezto
   end
 end
+
+task :install_powerlevel10k do
+  if want_to_install?('Powerlevel10k prompt (overrides default prezto skwp theme)')
+    install_powerlevel10k
+  end
+end
+
 
 desc 'Updates the installation'
 task :update do
