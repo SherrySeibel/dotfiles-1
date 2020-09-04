@@ -304,9 +304,7 @@ def install_powerlevel10k
   puts
   puts "Installing Powerlevel10k prompt"
   run %( brew install romkatv/powerlevel10k/powerlevel10k )
-  run %( echo 'source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc )
-  puts "Theme will override prezto by placing config in zshrc"
-  puts "To remove as default, remove or comment out `source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme` in your .zshrc file"
+  run %{ ln -nfs "/usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme" "$HOME/.yadr/zsh/prezto-themes/prompt_powerlevel10k_setup" }
 
   install_files(Dir.glob('zsh/custom-prompts/*'), :symlink)
 end
