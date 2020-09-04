@@ -31,10 +31,13 @@ task :install => [:submodule_init, :submodules] do
 
   install_term_theme if RUBY_PLATFORM.downcase.include?("darwin")
 
+  install_powerlevel10k
+
   run_bundle_config
 
   success_msg("installed")
 end
+
 
 task :install_prezto do
   if want_to_install?('zsh enhancements & prezto')
@@ -288,6 +291,15 @@ def install_prezto
       run %{ chsh -s /bin/zsh }
     end
   end
+end
+
+def install_powerlevel10k
+  puts
+  puts "Installing Powerlevel10k prompt"
+  run %( brew install romkatv/powerlevel10k/powerlevel10k )
+  run %( echo 'source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc )
+
+  install_files(Dir.glob('zsh/custom-prompts/*'), :symlink)
 end
 
 def want_to_install? (section)
