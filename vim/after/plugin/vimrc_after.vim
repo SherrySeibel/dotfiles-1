@@ -88,9 +88,9 @@ function! s:setup_git_messenger_popup() abort
 endfunction
 autocmd FileType gitmessengerpopup call <SID>setup_git_messenger_popup()
 
-let g:git_messenger_close_on_cursor_moved="false"
-let g:git_messenger_always_into_popup="true"
-let g:git_messenger_include_diff="current"
+let g:git_messenger_close_on_cursor_moved="false"    " You can move your curser without closing the window
+let g:git_messenger_always_into_popup="true"         " Will always open in a popup
+let g:git_messenger_include_diff="current"           " Will show the current git diff
 
 " ============== Coc Ruby completing ======================
 let g:coc_global_extensions = ['coc-solargraph']
