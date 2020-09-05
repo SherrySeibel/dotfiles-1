@@ -10,7 +10,7 @@ endif
 
 " ================ General Config ====================
 
-set number                      "Line numbers are good
+set number                      "Line numbers are good - this makes them relative
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
@@ -18,6 +18,8 @@ set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
+set cursorline                  "Highlight the number the cursor is on - this also adds horizontal highlighting
+set cursorcolumn                "Show hilight the column the cursor is on
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
