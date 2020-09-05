@@ -77,3 +77,41 @@ filetype plugin indent on       " load filetype plugins and indent settings
 set ruler                       " show the cursor position all the time
 
 set clipboard=unnamed           " Allows for copy/paste across tmux https://robots.thoughtbot.com/how-to-copy-and-paste-with-tmux-on-mac-os-x
+
+" =============== git-messenger mappings ==================
+nmap <Leader>gm <Plug>(git-messenger)
+
+function! s:setup_git_messenger_popup() abort
+    " Set go back/forward history to <C-o>/<C-i>
+    nmap <buffer><C-o> o
+    nmap <buffer><C-i> O
+endfunction
+autocmd FileType gitmessengerpopup call <SID>setup_git_messenger_popup()
+
+let g:git_messenger_close_on_cursor_moved="false"
+let g:git_messenger_always_into_popup="true"
+let g:git_messenger_include_diff="current"
+
+" ============== Coc Ruby completing ======================
+let g:coc_global_extensions = ['coc-solargraph']
+
+" Coc popup configurations
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+
+" =============== Color Scheme ===========================
+set t_Co=256   " This is may or may not needed.
+
+set background=dark
+colorscheme PaperColor
+
+let g:PaperColor_Dark_Override = { 'background' : '#1c1c1c', 'cursorline' : '#abcdef', 'matchparen' : '#3a3a3a', 'comment' : '#5f875f' }
+let g:PaperColor_Light_Override = { 'background' : '#abcdef', 'cursorline' : '#dfdfff', 'matchparen' : '#d6d6d6' , 'comment' : '#8e908c' }
